@@ -117,6 +117,16 @@ alias opg="code -r /home/$(whoami)/TerminalOutputs/firstLog.json"
 alias opg2="code -r /home/$(whoami)/TerminalOutputs/secondLog.json"
 alias tme="code -r /home/$(whoami)/TerminalOutputs/tomorrowMemo.txt"
 
+gish(){
+        git status -s
+}
+gibn(){
+        git branch --show-current
+}
+gisn(){
+        git diff --staged --name-only
+}
+
 ep(){
         $@ &> /home/$(whoami)/TerminalOutputs/firstLog.json
 }
