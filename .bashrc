@@ -113,7 +113,12 @@ if ! shopt -oq posix; then
 fi
 
 #  my custom setting
-alias opg="code -r /home/$(whoami)/TerminalOutputs/firstLog.json"
+export ep="$HOME/TerminalOutputs/firstLog.json"
+export ep2="$HOME/TerminalOutputs/secondLog.json"
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
+alias opg="code -r $HOME/TerminalOutputs/firstLog.json"
 alias opg2="code -r /home/$(whoami)/TerminalOutputs/secondLog.json"
 alias tme="code -r /home/$(whoami)/TerminalOutputs/tomorrowMemo.txt"
 
@@ -128,9 +133,10 @@ gisn(){
 }
 
 ep(){
-        $@ &> /home/$(whoami)/TerminalOutputs/firstLog.json
+        "$@" &> /home/$(whoami)/TerminalOutputs/firstLog.json
 }
 
 ep2(){
-        $@ &> /home/$(whoami)/TerminalOutputs/secondLog.json
+        "$@" &> /home/$(whoami)/TerminalOutputs/secondLog.json
 }
+
