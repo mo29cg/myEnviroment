@@ -115,15 +115,20 @@ fi
 #  my custom setting
 export ep="$HOME/TerminalOutputs/firstLog.json"
 export ep2="$HOME/TerminalOutputs/secondLog.json"
+
 export PATH="$HOME/.anyenv/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 eval "$(anyenv init -)"
+
+alias wudo="python3 $HOME/GitHub/wsl-sudo/wsl-sudo.py"
+alias hsup="python3 $HOME/GitHub/wsl-sudo/wsl-sudo.py /mnt/c/Users/suzuki/Downloads/HearthstoneAccess/HearthstoneAccess.exe"
 
 alias opg="code -r $HOME/TerminalOutputs/firstLog.json"
 alias opg2="code -r /home/$(whoami)/TerminalOutputs/secondLog.json"
 alias tme="code -r /home/$(whoami)/TerminalOutputs/tomorrowMemo.txt"
 
 gish(){
-        git status -s
+        git status -s &> $ep
 }
 gibn(){
         git branch --show-current
@@ -135,8 +140,27 @@ gisn(){
 ep(){
         "$@" &> /home/$(whoami)/TerminalOutputs/firstLog.json
 }
+epu(){
+        "$@" |& cst  &> /home/$(whoami)/TerminalOutputs/firstLog.json
+}
 
 ep2(){
         "$@" &> /home/$(whoami)/TerminalOutputs/secondLog.json
 }
+ca(){
+        ts-node ~/GitHub/createEthereumAddress/test.ts
+}
+grl(){
+        gh run view $1 --log | cst | ts-node $HOME/GitHub/runLogAccess/format.ts &> $ep
+}
+grlf(){
+        gh run view $1 --log-failed | cst | ts-node $HOME/GitHub/runLogAccess/format.ts &> $ep
+}
+frlo(){
+        sed -e 's/\([0-9]\{7\}Z\)/\1\n  /g' > $ep
+}
 
+# delete color code
+cst(){
+    sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?m//g"
+}
