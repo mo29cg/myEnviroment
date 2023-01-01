@@ -487,6 +487,51 @@
             "liveRegionMode": 0,
             "name": "All sites",
             "urlMatch": 0
+        },
+        {
+            "autoClickCategory": 5,
+            "autoClickContinuous": false,
+            "autoClickContinuousDelay": 500,
+            "autoClickOnFocus": false,
+            "autoClickOnFocusDelay": 500,
+            "bookmarks": [
+                {
+                    "attributes": [],
+                    "category": 1,
+                    "enabled": true,
+                    "message": "",
+                    "name": "",
+                    "offset": 0,
+                    "pattern": "I'm having some problems with my node tests with jest. When I write the command to run the tests without the --runInBand flag, some of my tests fail. And when I try to run with the --runInBand flag they all pass...",
+                    "patternMatch": 1
+                },
+                {
+                    "attributes": [],
+                    "category": 1,
+                    "enabled": true,
+                    "message": "",
+                    "name": "",
+                    "offset": 0,
+                    "pattern": "I have multiple npm projects saved in a local directory. Now I want to take backup of my projects without the node_modules folder, as it is taking a lot of space and can also be retrieved any time using npm install.",
+                    "patternMatch": 1
+                },
+                {
+                    "attributes": [],
+                    "category": 1,
+                    "enabled": true,
+                    "message": "",
+                    "name": "",
+                    "offset": 0,
+                    "pattern": "aa",
+                    "patternMatch": 3
+                }
+            ],
+            "debugBeepMode": 0,
+            "domain": "stackoverflow.com",
+            "focusMode": 0,
+            "liveRegionMode": 0,
+            "name": "",
+            "urlMatch": 2
         }
     ]
 }
