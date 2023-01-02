@@ -4,7 +4,7 @@
 
 ## nvda
 
-/Users/\<user name>/AppData/Roaming/nvda に nvda を配置
+C:/Users/\<user name>/AppData/Roaming に nvda を配置
 
 ## bash
 
